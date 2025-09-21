@@ -14,16 +14,16 @@ int main()
     fin.open("inputFile.txt");
     if (fin.good())
     {
-        int size = hourlyWage.size();
+        int num;
 
-        for (int i = 0; i < size; i++)
+        while(fin >> num)
         {
-            fin >> hourlyWage[i];
+            hourlyWage.push_back(num);
         }
 
         fin.close();
 
-        cout << "1. Max Size: " << hourlyWage.size() << endl;
+        cout << "1. Size: " << hourlyWage.size() << endl;
         
         cout << "2. Values: ";
         for (double val : hourlyWage) 
@@ -31,7 +31,7 @@ int main()
 
         cout << endl;
         
-        cout << "3. Element 4: " << hourlyWage.at(4) << endl;
+        cout << "3. Element 4: " << hourlyWage[4] << endl;
         
         cout << "4. Front: " << hourlyWage.front() << endl;
         
