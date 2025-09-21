@@ -14,7 +14,9 @@ int main()
     fin.open("inputFile.txt");
     if (fin.good())
     {
-        for (int i = 0; i < SIZE; i++)
+        int size = hourlyWage.size();
+
+        for (int i = 0; i < size; i++)
         {
             fin >> hourlyWage[i];
         }
