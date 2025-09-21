@@ -10,18 +10,15 @@ int main()
 {
     vector<double> hourlyWage;
     
-    ifstream fin;
-    fin.open("inputFile.txt");
-    if (fin.good())
+    ifstream inputFile("inputFile.txt");
+
+    if (inputFile.good())
     {
-        int num;
+        double wage;
+        while(inputFile >> wage)
+            hourlyWage.push_back(wage);
 
-        while(fin >> num)
-        {
-            hourlyWage.push_back(num);
-        }
-
-        fin.close();
+        inputFile.close();
 
         cout << "1. Size: " << hourlyWage.size() << endl;
         
